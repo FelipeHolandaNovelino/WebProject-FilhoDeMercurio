@@ -1,0 +1,404 @@
+body {
+  background-color: rgb(26, 10, 149);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(26, 10, 149);
+  padding: 20px;
+  text-align: center;
+  color: #ff4500;
+}
+
+/* Estilização dos divisores entre os elementos da lista */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ff4500;
+  font-weight: bold;
+}
+
+/* Adiciona uma borda à direita de cada elemento de lista, exceto o último */
+nav li:not(:last-child) {
+  border-right: 2px solid #ff4500;
+  padding-right: 35px;
+  /* Espaçamento à direita da borda */
+}
+
+/* Estilização do seletor de tipo de produto */
+.product-selector {
+  margin: 10px 0;
+  font-family: "Andale Mono", monospace;
+  /* Aplica a fonte "Andale Mono" */
+}
+
+/* Estilização do dropdown de produtos */
+.products-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.product-options {
+  display: none;
+  position: absolute;
+  background-color: rgb(26, 10, 149);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(26, 10, 149);
+  padding: 10px;
+  z-index: 1;
+  right: 0;
+  top: 100%;
+  text-align: left;
+  /* Define o alinhamento do texto para a esquerda */
+}
+
+.products-dropdown:hover .product-options {
+  display: block;
+}
+
+.section {
+  background-color: rgb(26, 10, 149);
+  padding: 20px;
+}
+
+header h1 {
+  color: #ff4500;
+  font-size: 24px;
+  /* Tamanho do texto personalizável */
+  font-family: "Andale Mono", monospace;
+  font-size: 35px;
+}
+
+nav a {
+  color: #ff4500;
+  font-weight: bold;
+  font-family: "Andale Mono", monospace;
+}
+
+/* modifica o fundo das sessoes*/
+.section {
+  background-color: rgb(26, 10, 149);
+  padding: 20px;
+  color: #ff4500;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Para permitir que os produtos mudem de linha conforme necessário */
+  justify-content: center;
+}
+
+/* style com tamanho, borda, linha divisória e fonte para nome, descrição e preço */
+.produto {
+  margin: 10px;
+  width: 220px;
+  /* tamanho desejado para todos os produtos */
+  max-width: 70%;
+  /* Limita a largura máxima para garantir que todos tenham o mesmo tamanho */
+  border: 3px solid #f2eae8;
+  /* Adiciona uma borda de 2 pixels */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* style para a imagem dos produtos */
+.produto img {
+  width: 100%;
+  max-height: 220px;
+  height: auto;
+}
+
+/* style para a linha divisória */
+.produto .linha-divisoria {
+  width: 100%;
+  height: 3px;
+  background-color: #f2eae8;
+}
+
+/* style para o nome, descrição e preço dos produtos */
+.produto h3,
+.produto p,
+.produto span {
+  margin: 10px;
+  font-family: "Andale Mono", monospace;
+  /* Altera a fonte para "Andale Mono" */
+  margin-bottom: 10px;
+  /* Reduz a margem inferior da descrição */
+}
+
+/* style para o botão "Comprar" */
+.produto button {
+  margin-top: auto;
+  /* Empurra o botão para o fundo da coluna */
+  background-color: #ff4500;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto do botão */
+  padding: 5px 10px;
+  /* Espaçamento interno do botão */
+  border: none;
+  cursor: pointer;
+  font-family: "Andale Mono", monospace;
+  /* Altera a fonte para "Andale Mono" */
+}
+
+/*centralizar o titulo das sessoes*/
+.centralizado {
+  text-align: center;
+  color: #ff4500;
+  font-size: 24px;
+  font-family: "Andale Mono", monospace;
+}
+
+/*carrinho*/
+
+/*conf carrinho + contador numerico*/
+.carrinho {
+  position: fixed;
+  top: 20px;
+  /* Ajuste a posição vertical conforme necessário */
+  right: 20px;
+  /* Ajuste a posição horizontal conforme necessário */
+  display: flex;
+  align-items: center;
+  background-color: #ff4500;
+  /* Cor de fundo do carrinho */
+  color: #fff;
+  /* Cor do texto */
+  padding: 5px 5px;
+  border-radius: 10px;
+  /* Borda circular */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: 3px solid #f2eae8;
+}
+
+/*icone carrinho*/
+.carrinho-icon button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  /* Tamanho do ícone */
+  line-height: 1;
+  color: #fff;
+  /* Cor do ícone */
+  cursor: pointer;
+  display: "block";
+}
+
+
+
+/*configuracao da barra de compras*/
+.carrinho-barra-rolagem {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  /* Largura inicial da barra de rolagem */
+  height: 100%;
+  background-color: rgb(26, 10, 149);
+  overflow-y: auto;
+  /* Tornar a barra de rolagem visível apenas quando necessário */
+  display: none;
+}
+
+/*botao fechar carrinho*/
+.fechar-carrinho {
+  background-color: #ff4500;
+  color: #000;
+  /* Define a cor do ícone como preto */
+  border: none;
+  /* Remove a borda se houver */
+  font-size: 24px;
+  /* Tamanho do ícone */
+  width: 40px;
+  /* Largura do botão */
+  height: 40px;
+  /* Altura do botão */
+  border-radius: 0;
+  /* Deixa o botão redondo (opcional) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* Mostra a mão ao passar o mouse sobre o botão */
+}
+
+/******************************/
+
+.item-carrinho {
+  display: flex;
+  flex-direction: column;
+  /* Configura a direção da coluna */
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ff4500;
+  border: 2px solid rgb(26, 10, 149);
+  text-align: center;
+  /* Centraliza o conteúdo verticalmente */
+  position: relative;
+}
+
+.item-carrinho img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  /* Espaçamento inferior para a imagem */
+  border: 2px solid#fff;
+}
+
+.item-carrinho span {
+  margin-bottom: 5px;
+  /* Espaçamento inferior para o nome e preço */
+  font-family: "Andale Mono", monospace;
+  color: #fff;
+}
+
+/*style botao remover*/
+.item-carrinho button {
+  background-color: rgb(26, 10, 149);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  /* istância do fundo */
+  right: 5px;
+  /* distância do lado direito  */
+}
+
+/*style total carrinho*/
+
+.total-carrinho {
+  background-color: #ff4500;
+  color: #fff;
+  padding: 10px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* imagem sobre mim */
+.sobreMim {
+  display: block;
+  /* Para centralizar a imagem horizontalmente */
+  margin: 0 auto;
+  max-width: 25%;
+  /* Define a largura máxima para ajustar automaticamente o tamanho */
+  height: auto;
+  /* Mantém a proporção da imagem */
+}
+
+/* style para paragrafos centralizados */
+.section p {
+  font-size: 15px;
+  /* Tamanho da fonte para os parágrafos nas seções */
+  text-align: center;
+  /* Centraliza o texto dos parágrafos */
+  color: #fff;
+}
+
+/* cor do fundo do rodape*/
+.footer {
+  background-color: #ff4500;
+}
+
+/*cor do paragrafo do rodape*/
+.footer p {
+  color: rgb(26, 10, 149);
+}
+
+/* Estilos para o modal */
+/* Estilização para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Fundo escuro semi-transparente */
+  z-index: 999;
+}
+
+.modal-conteudo {
+  background-color: #ff4500;
+  /* Cor de fundo do modal, você pode alterar */
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid#ff4500;
+  border-radius: 0px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  /* Fonte usada no modal, você pode alterar */
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(26, 10, 149);
+  /* Cor do botão de fechar, você pode alterar */
+}
+
+/* Estilização para os campos do formulário */
+label {
+  display: block;
+  /* Faz com que os rótulos fiquem um abaixo do outro */
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select {
+  width: 100%;
+  padding: 0.5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+
+button[type="submit"] {
+  background-color: rgb(26, 10, 149);
+  /* Cor de fundo do botão*/
+  color: #ff4500;
+  /* Cor do texto no botão*/
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  /* Fonte usada no botão*/
+}
+
+/* style para o modal e fundo ofuscado */
+.modal.ativo {
+  display: block;
+}
+
+body.modal-ativo {
+  overflow: hidden;
+  /* Impede a rolagem da página de fundo */
+}

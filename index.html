@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filho de Mercúrio</title>
+  <link rel="stylesheet" href="style.css"> <!-- Certifique-se de criar um arquivo style.css separado para o CSS -->
+  <script src="scripts.js" async></script>
+</head>
+
+<body>
+  <header>
+    <h1>Filho de Mercúrio</h1>
+    <nav>
+      <ul>
+        <li class="products-dropdown">
+          <a href="#produtos">Produtos</a>
+          <div class="product-options">
+            <a href="#quadros">Quadros</a>
+            <a href="#tecidos">Tecidos</a>
+          </div>
+        </li>
+        <li><a href="sobremim.html">Sobre Mim</a></li>
+        <li><a href="#" id="abrir-modal">Adicionar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="carrinho" class="carrinho">
+    <div class="carrinho-icon">
+      <button id="carrinho-button">🛒</button> <!-- Alterado o ID para "carrinho-button" -->
+    </div>
+    <div class="carrinho-quantidade">0</div> <!-- Elemento para exibir o número de itens no carrinho -->
+  </div>
+
+  <div id="carrinho-barra-rolagem" class="carrinho-barra-rolagem">
+    <button id="fechar-carrinho" class="fechar-carrinho">✕</button>
+    <h2 class="centralizado">🛒Carrinho</h2>
+    <div id="itens-carrinho" class="itens-carrinho">
+
+      <!-- Os itens do carrinho serão adicionados aqui -->
+    </div>
+
+
+  </div>
+  <section class="section" id="quadros">
+    <h2 class="centralizado">Quadros</h2>
+    <div class="produtos-container" id="quadros-container">
+      <!-- Conteúdo de produtos do tipo "Quadros" será exibido aqui -->
+    </div>
+  </section>
+
+  <section class="section" id="tecidos">
+    <h2 class="centralizado">Tecidos</h2>
+    <div class="produtos-container" id="tecidos-container">
+      <!-- Conteúdo de produtos do tipo "Tecidos" será exibido aqui -->
+    </div>
+  </section>
+
+  <!--Formularios Adicionar Pedido-->
+  <div id="modal" class="modal">
+    <div class="modal-conteudo">
+      <span id="fechar-modal" class="fechar-modal">&times;</span>
+      <h2>Adicionar Produto</h2>
+      <form id="formulario-adicionar">
+        <label for="produto-nome">Nome do Produto:</label>
+        <input type="text" id="produto-nome" name="produto-nome" required>
+        <label for="produto-nome">Descricao do produto:</label>
+        <input type="text" id="produto-descricao" name="produto-descricao" required>
+        <label for="produto-tipo">Tipo do Produto:</label>
+        <select id="produto-tipo" name="produto-tipo">
+          <option value="Quadros">Quadros</option>
+          <option value="Tecidos">Tecidos</option>
+        </select>
+        <label for="produto-preco">Preço:</label>
+        <input type="number" id="produto-preco" name="produto-preco" step="0.01" required>
+        <label for="produto-imagem">URL da Imagem:</label>
+        <input type="url" id="produto-imagem" name="produto-imagem" required>
+        <button type="submit">Adicionar Produto</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="footer p"> &copy; 2023 Filho de Mercúrio</p>
+  </footer>
+</body>
+
+</html>
